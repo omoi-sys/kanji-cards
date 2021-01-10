@@ -22,7 +22,7 @@ def findOne():
     num = random.randrange(1, 2134)
     kanji = KanjiDB.find_one({"number" : num})
     kanji['_id'] = str(ObjectId()) # convert ObjectId() into string
-    return kanji
+    return json.dumps(kanji, ensure_ascii=False)
 
 if __name__ == '__main__':
     app.run(port=10000)
