@@ -2,7 +2,8 @@ import random
 from flask import Flask
 from flask_pymongo import pymongo
 from dotenv import load_dotenv
-from bson.json_util import dumps
+from bson.objectid import ObjectId
+import json
 import os
 load_dotenv()
 
@@ -20,7 +21,8 @@ KanjiDB = Db.kanji
 def findOne():
     num = random.randrange(1, 2134)
     kanji = KanjiDB.find_one({"number" : num})
-    return dumps(kanji) # convert BSON object into JSON
+    kanji['_id'] = str(ObjectId()) # convert ObjectId() into string
+    return kanji
 
 if __name__ == '__main__':
     app.run(port=10000)
