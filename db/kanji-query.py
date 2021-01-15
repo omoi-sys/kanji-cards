@@ -27,8 +27,4 @@ def findOne():
     return json.dumps(kanji, ensure_ascii=False) # convert BSON to JSON with correct encoding
 
 if __name__ == '__main__':
-<<<<<<< HEAD
-    app.run(host='0.0.0.0', port=10000, ssl_context=('fullchain.pem', 'privkey.pem'))
-=======
-    app.run(host='0.0.0.0', port=10000, ssl_context=('fullchain.pem', 'privkey.pem'))
->>>>>>> 89799d45915d8769b439e79b5429f13c57b5fee6
+  app.run(host='0.0.0.0', port=10000, ssl_context=('fullchain.pem', 'privkey.pem'))
