@@ -23,34 +23,23 @@ export default class Card extends Component {
     render() {
       return (
         <div>
-          <table>
-            <tbody>
-              <tr>
-               <th>Kanji</th>
-               <th>On'yomi</th>
-               <th>Kun'yomi</th>
-               <th>Meanings</th>
-              <th>JLPT Level</th>
-              </tr>
-              <tr>
-                <td>
-                  {this.state.kanji.kanji}
-                </td>
-                <td>
-                  {this.state.kanji.onyomi}
-                </td>
-                <td>
-                  {this.state.kanji.kunyomi}
-                </td>
-                <td>
-                  {this.state.kanji.meanings}
-                </td>
-                <td>
-                  {this.state.kanji.jlpt}
-                </td>
-            </tr>
-            </tbody>
-          </table>
+          <div className="card">
+            <h1>
+              {this.state.kanji.kanji}
+            </h1>
+            <break></break>
+            <h3>
+              {this.state.kanji.onyomi}
+            </h3>
+            <break></break>
+            <h3>
+              {this.state.kanji.kunyomi}
+            </h3>
+            <break></break>
+            <h3>
+              JTLP level: {this.state.kanji.jlpt}
+            </h3>
+          </div>
         </div>
       );
     }
